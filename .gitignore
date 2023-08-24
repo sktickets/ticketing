@@ -1,3 +1,4 @@
  node_modules
 .npmrc
 TODO.md
+.idea
