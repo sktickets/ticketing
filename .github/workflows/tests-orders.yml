@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: orders service
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -15,6 +15,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - run: echo "${{ secrets.NPM_TOKEN }}"
       - name: run tests
         run: cd orders && npm i && npm run test:ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
