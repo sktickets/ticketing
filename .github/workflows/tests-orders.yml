@@ -15,9 +15,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "${{ secrets.NPM_TOKEN }}"
+      - run: echo "${{ secrets.GH_REGISTRY_PACKAGES }}"
       - name: run tests
         run: cd orders && npm i && npm run test:ci
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_REGISTRY_PACKAGES }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
