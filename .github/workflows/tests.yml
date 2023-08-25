@@ -1,5 +1,8 @@
 name: Tests
 
+on:
+  pull_request
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,4 +13,3 @@ jobs:
           token: ${{ secrets.PAT }}
           ref: master
       - run: cd auth && npm i && npm run test:ci
-      
