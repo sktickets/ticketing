@@ -15,6 +15,14 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@sktickets'
       - name: run tests
         run: cd payments && npm i && npm run test:ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_REGISTRY_PACKAGES }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
