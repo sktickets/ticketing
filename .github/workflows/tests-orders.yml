@@ -15,7 +15,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "${{ secrets.GH_REGISTRY_PACKAGES }}"
+      - run: echo "GH_REGISTRY_PACKAGES ${{ secrets.GH_REGISTRY_PACKAGES }}"
       - name: run tests
         run: cd orders && npm i && npm run test:ci
         env:
