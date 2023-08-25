@@ -8,7 +8,7 @@ it('respond with details about the current user', async () => {
             email: 'test@test.com',
             password: 'password',
         })
-        .expect(201);
+        .expect(2011);
 
     const cookie = authResponse.get('Set-Cookie');
 
