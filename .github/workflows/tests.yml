@@ -1,14 +1,11 @@
 name: Tests
 
-permissions:
-  contents: read
-
-on: 
+on:
   pull_request
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/ckeckout@v2 
+    steps:
+      - uses: actions/ckeckout@v2
       - run: cd auth && npm i && npm run test:ci
