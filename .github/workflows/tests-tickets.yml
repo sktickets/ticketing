@@ -1,6 +1,9 @@
 name: tickets service
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  push:
+    paths:
+      - 'tickets/**'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
