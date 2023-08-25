@@ -14,3 +14,4 @@ jobs:
           token: ${{ secrets.PAT }}
           ref: master
       - run: cd auth && npm i && npm run test:ci
+      
