@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/ckeckout@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT_ACTIONS }}
           repository: sktickets/ticketing
           path: ticketing
       - run: cd auth && npm i && npm run test:ci
